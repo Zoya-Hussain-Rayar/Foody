@@ -1,0 +1,925 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400&display=swap');
+
+:root{
+    --black :#333;
+    --light-color : #cdaa7c;
+    --box-shadow : 0.5rem 1.5rem rgba( 0 , 0 , 0 , 0.1);
+}
+
+*{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    text-transform: capitalize;
+    text-decoration: none;
+    transition: all 0.s linear;
+}
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+  
+}
+
+
+/* styling for navbar starts from here*/
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background:  rgba( 0 , 0 , 0 , 0.5);
+    z-index: 2;
+}
+
+header .logo{
+   display: flex;
+   align-items: center;
+   
+    justify-content:flex-start;
+
+}
+header .logo img{
+    height: 30px
+  
+}
+ .logo span{
+    padding: 0;
+    position: relative;
+    color: whitesmoke;
+    left: 10px;
+    font-size: 30px;
+}
+
+header a{
+    font-size: 1.8rem;
+    padding: 0.5rem 1.5rem;
+    font-weight: 500;
+    color:#fff;
+    border: 0.1rem solid transparent;
+    z-index: 100;
+
+}
+header .navbar a.active,
+header .navbar a:hover {
+
+    color: #fff;
+    border: 0.1rem solid rgba(205,170 ,124 ,0.2 );
+}
+
+header .icons i{
+    cursor: pointer;
+    margin-left:0.5rem ;
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    background: transparent;
+    text-align: center;
+    font-size: 2.5rem;
+    color: whitesmoke;
+    transition:all ease 0.6s ;
+
+}
+
+
+
+header .icons i:hover{
+    font-size: 3.5rem;
+    /* background: var(--light-color); */
+    color: whitesmoke;
+    transform: rotate(360deg);
+}
+
+header .icons #menu{
+    display: none;
+}
+/* navbar styling ends here */
+
+/* slider styling start */
+
+.home .homeSlider .slide {
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    height: 100vh;
+
+}
+.home .homeSlider .slide1{
+    background: url(img/piececake.jpg);
+}
+.home .homeSlider .slide2{
+    background: url(img/knife2.jpg); 
+}
+  
+.home .homeSlider .slide3{
+    background: url(img/food.jpg); 
+}
+
+
+.home .homeSlider .slide1,
+.home .homeSlider .slide2,
+.home .homeSlider .slide3 {
+
+    background-size: cover;
+    background-repeat:no-repeat ;
+}
+
+.home .homeSlider .slide .content{
+    text-align: center;
+    padding-left: 9rem;
+}
+.home .homeSlider .slide .content img{
+    height: 120px;
+}
+
+.home .homeSlider .slide .content h3{
+    color: rgb(255, 254, 252);
+    z-index: 3000;
+    font-size: 3.5rem;
+    font-weight: 300;
+}
+.home .homeSlider .slide .content h1{
+    color: #fff;
+    font-size: 8rem;
+}
+.home .homeSlider .slide .content p{
+    color: #e6e7e7;
+    letter-spacing: 1px;
+    padding: 0.5rem 0;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    font-size: 2rem;
+    font-weight: 200;
+}
+.btn {
+    margin-top: 1rem;
+    display: inline-block;
+    font-size: 1.7rem;
+    color: #fff;
+    border: 0.1rem solid  #a57c47;
+    background: transparent;
+    cursor: pointer;
+    padding: 1rem 3.3rem;
+    position: relative;
+    overflow: hidden;
+    /* Remove z-index: 1; */
+}
+
+.btn:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: #a57c47;
+    z-index: -1;
+    position: absolute;
+    left: -100%;
+    top: 0;
+    transition: 0.5s;
+}
+
+.btn:hover:before {
+    left: 0;
+}
+
+.swiper-pagination-bullet{
+ 
+    background:#a57c47  !important;
+    width: 15px  !important;
+    height: 15px  !important;
+    border-radius: 50% !important ;
+}
+
+/* slider syling ends */
+
+/*card btn styling starts from here */
+.card{
+    position: relative;
+    margin: 0 auto;
+    margin-top: 20px;
+    height: 40px;
+    width: 155px;
+    background-color:#2c2c2c;
+    overflow: hidden;
+    color: #b2b2b2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.6 ease;
+
+}
+.card::before{
+    content: '';
+
+    position: absolute;
+    height: 180px;
+    width:30px;
+    /* background:linear-gradient(white , rgb(140, 96, 47)) ; */
+    background-image: conic-gradient(#fafafa 0deg , #fafafa 40deg , transparent 90deg , transparent 130deg , transparent 180deg , #a07e52 180deg ,  #a07e52 260deg ,transparent 280deg , transparent 310deg , transparent 360deg) ;
+    box-shadow: 0 0 10px #2c2c2c;
+    animation: animate 4s linear infinite;
+
+
+}
+.card::after{
+    content: 'read more';
+    position: absolute;
+    inset: 5px;
+    font-size: 1.3rem;
+    background-color: #2c2c2c ;
+    color: #b2b2b2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 1 ease;
+
+}
+@keyframes animate {
+    0%{
+        transform: rotate(0deg);
+
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.card:hover {
+    display: grid;
+    place-items: center;
+    position: relative;
+    height: 40px;
+    width: 155px;
+    /* background: black; */
+    cursor: pointer;
+} 
+
+.card:hover::before {
+    /* position: absolute; */
+    content: '';
+    height: 46px;
+    color: #9f7033;
+
+    width: 161px;
+    background: #a57c47 ;
+    background: linear-gradient(to bottom,  #e2e2e2 , #a57c47);
+    /* z-index: -1; */
+    transition: 0.3s;
+    animation: animate2 1s linear infinite;
+}
+.card:hover:after{
+    font-size:1.4rem ;
+   color: #fafafa;
+}
+
+@keyframes animate2 {
+    /* 50% {
+        filter: hue-rotate(360deg);
+    } */
+
+      0% {
+    filter:rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+/*welcome section styling starts  */
+
+section{
+    padding: 8rem 9%;
+}
+.heading{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 4.6rem;
+    padding: 2rem;
+    color: #333;
+    letter-spacing: 1.3px;
+}
+.welcome .heading span{
+    /* background: -webkit-linear-gradient( #b78646 , #333);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+    background-color: #1b1b1a;
+    background-image: linear-gradient(180deg, #b78646, #333);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
+}
+.subHeading{
+    text-align: center;
+    color:var(--light-color);
+    font-size: 2.5rem;
+    padding: 1.5rem 2rem;
+    font-weight: 300;
+    margin-bottom: 4rem;
+    background: var(--black);
+    display: inline-block;
+}
+.welcome .boxContainer {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+.welcome .boxContainer .box{
+    width: 34%;
+    background: var(--black);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    padding-bottom: 1%;
+}
+.welcome .boxContainer .box .image{
+    height: 35rem;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    
+}
+.welcome .boxContainer .box .image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 1s ease ;
+}
+.welcome .boxContainer .box .image:hover img{
+    transform: scale(2) rotate(-45deg);
+
+}
+.welcome .boxContainer .box  .content{
+    padding: 2rem;
+}
+
+.welcome .boxContainer .box  .content h3{
+    color: var(--light-color);
+    font-size: 2.2rem;
+    font-weight: 400;
+
+}
+.welcome .boxContainer .box  .content p{
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 300;
+    padding: 0.5rem 0;
+    line-height: 1.5;
+}
+/*welcome section styling ends  here*/
+
+/* our menu section starts from here */
+.ourMenu{
+    background: url(img/bg-transformed.jpeg);
+    background-repeat:no-repeat ;
+    background-size: cover;
+    
+}
+.ourMenu h1{
+    color: #e6e7e7;
+
+}
+.ourMenu center h3{
+    color: #e6e7e7;
+    font-size: 2.3rem;
+    font-weight: 300;
+    padding: 0.5rem 0;
+    line-height: 1.5;
+
+}
+
+.ourMenu .menuContainer{
+    padding:3rem 0 ;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(50rem,2fr));
+    gap: 5rem 10rem;
+
+}
+.item .itemName img{
+    width: 60px;
+}
+.ourMenu .menuContainer .item .itemName{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    margin-top:0.5rem ;
+}
+
+.ourMenu .menuContainer .item .itemName h2{
+    font-size: 3.5rem;
+    color: #e6e7e7;
+    font-weight: 400;
+}
+
+.ourMenu .menuContainer .item .itemMenu h3{ 
+    font-size: 2.2rem;
+    color: #e6e7e7;
+    font-weight: 400;
+    display: inline-block;
+
+ } 
+
+.ourMenu .menuContainer .item .itemMenu h3:nth-child(1){ 
+    color: #c0bfbf;
+
+ } 
+ .ourMenu .menuContainer .item .itemMenu span{
+    width: 34%;
+    display: inline-block;
+    border: 1px dotted  #e6e7e7;
+ }
+ 
+ .item .itemMenu ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1.5rem;
+    letter-spacing: 0.8px;
+    font-weight: 200;
+    list-style: none;
+    padding: 0.8rem;
+ }
+ .ourMenu .menuContainer .item .itemMenu ul li a{
+    color: #e6e7e7;
+ }
+/*styling for our menu section ends up here */
+
+
+/* styling for our team section starts  */
+
+.ourChef{
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem , 1fr));
+    grid-gap: 1.5rem;
+}
+
+.ourChef .item .image img{
+    width: 100%;
+
+}
+.ourChef .item{
+    position: relative;
+    overflow: hidden; 
+    z-index: 2;
+    opacity: 0.9;
+}
+.ourChef .item:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 5;
+    cursor: pointer;
+    transition:all 1s ease;
+    display: none;
+
+}
+
+.ourChef .item:hover .item:before{ 
+    display: block;
+}
+.ourChef .item .chefInfo{
+    position: absolute;
+    top: 130%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    text-align: center;
+    transition: all 1s;
+    z-index: 10;
+}
+.ourChef .item .chefInfo h3{
+    font-size: 2.1rem;
+    color: #fff;
+    letter-spacing: 1px;
+
+    padding: 0.8rem 0;
+    text-transform: uppercase;
+}
+.ourChef .item .chefInfo span{
+    font-size:1.5rem ;
+    letter-spacing: 1px;
+    color: #e2e2e2;
+}
+ ul{
+    display: flex;
+    justify-content: center;
+    grid-gap: 2rem;
+    padding: 3rem 0;
+    list-style: none;
+}
+.ourChef .item .chefInfo  ul li a{
+    font-size: 2rem;
+}
+.ourChef .item:hover .chefInfo{
+    top: 0;
+}
+
+.touch .ourChef .item:hover .chefInfo {
+    top: 0;
+}
+/* styling for our team section ens here */
+
+
+ /* reservation style starts */
+ .reservation {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    width: 100vw;
+  }
+
+  .reservation  .content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+  }
+
+  .reservation  .content .image {
+    /* position: absolute; */
+
+     position: relative;
+    width: 1000px;
+    height: 500px;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    background: url(img/table.jpg);
+  background-position:center center ;
+  background-size:cover;
+  background-repeat: no-repeat;
+  }
+
+ 
+
+  .reservation .content .form {
+
+    backdrop-filter: blur(20px);
+    padding: 20px;
+    width: 300px;
+    z-index: 2;  
+    background-color: rgb(255, 255, 255 , 0.1);
+    transform: translate(-190px , 75px);
+    box-shadow: 0 0 6px 2px rgb(35, 35, 35);
+  }
+
+
+   .reservation h1 {
+    margin: 10px;
+    color: #282727;
+    font-size: 4.2rem;
+   }
+
+
+  .reservation .content .form form .formHolder input,
+  .reservation .content .form form .formHolder select {
+    display: block;
+    width: 90%;
+    margin: 1.5rem auto;
+    padding:7px 10px;
+    background: none;
+    border-bottom: 0.1rem solid #494747;
+    font-size: 1.2rem;
+    font-weight: 300;
+    outline: none;
+    color:  black;
+
+  }
+  ::placeholder {
+    color:  black;
+
+  }
+  .button {
+
+    color: #050505;
+    border-left: 5px solid #222121;
+    border-right: 5px solid #222121;
+    padding: 6.6px 20px;
+    background-color: #8d8c8c;
+    transition: all linear 0.4s;
+    font-size: 17px;
+    letter-spacing: 0.2px;
+    cursor: pointer;
+
+  }
+
+  .button:hover {
+    padding: 7px 70px;
+    font-weight: 400;
+
+  }
+
+
+/* styling for blog section starts from here */
+.blog .boxContainer .box{
+   background: #fff;
+}
+.blog .content{
+    text-align: left;
+    position: relative;
+}
+.blog .content h1, 
+.blog .content p,
+.blog .content a{
+    color: black !important;
+}
+
+.blog .content a{
+    padding: 1rem;
+    font-size: 14px;
+    display: inline-block;
+    text-decoration: underline;
+    font-weight: 900 !important; 
+    color: rgb(129, 126, 126) !important;
+}
+
+/* styling for footer section starts from here */
+.footer{
+    background-color: #333;
+    text-align: center;
+    color: #e2e2e2;
+    font-size: 1.3rem;
+}
+.footer .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(30rem, 2fr));
+    grid-gap: 1rem;
+    color: #b2b2b2;
+    padding: 4rem 0;
+
+    border-bottom: 1px solid #b2b2b2;
+    
+}
+.footer .container div{
+    padding: 0 7rem;
+}
+.footer .container h3{
+    padding-bottom: 0.8rem;
+    font-size: 1.5rem;
+    color: #fff;
+}
+.footer .container input{
+    width: 100%;
+    border: 1px solid #b2b2b2;
+    padding: 0.5rem 0.8rem;
+    background: transparent;
+    color: #d6d1d1;
+    border-radius: 20px;
+    
+    text-align: center;
+}
+.footer .container div ul li a{
+    font-size: 2rem;
+}
+
+.footer .container div span{
+    display: block;
+}
+ .copyright{
+    margin-top: 20px;
+    font-size: 1.5rem;
+}
+/* styling for footer section  ends here */
+
+::-webkit-scrollbar{
+    width: 10px;
+
+}
+::-webkit-scrollbar-track{
+    background: #3c3c3c;
+}
+::-webkit-scrollbar-thumb{
+    background: #a8a7a7;
+    border-radius: 12px;
+}
+
+.topbtn{
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    background: #4b4b4a;
+    bottom: 10%;
+    right: 2%;
+    color: #fff;
+    cursor: pointer;
+}
+
+.reveal{
+    position: relative;
+    transform: translateY(220px);
+    opacity: 0;
+    transition: all 1s ease;
+}
+.reveal.active{
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+/* media querry's */
+@media (max-width:1600px)  {
+
+.home .homeSlider .slide2{
+    background: url(img/knife3.jpg);
+}
+   
+  
+.home .homeSlider .slide1,
+.home .homeSlider .slide2,
+.home .homeSlider .slide3 {
+
+    background-size: cover;
+    background-repeat:no-repeat ;
+}
+ 
+   
+}
+
+
+@media (max-width:965px)  {
+    html{
+        font-size: 55%;
+    }
+    header{
+        padding: 1rem 2rem;
+    }
+    /* media querry for reservation section */
+    .reservation{
+        flex-direction: column;
+        height: max-content;
+
+        width: 100%;
+    
+       } 
+       
+    .reservation .form h1{
+        margin-top:0 ;
+      }
+
+       .reservation .image{
+        max-height: 55%;
+        height: 400px;
+        width: 100%;
+        object-fit: cover;
+
+       }
+      
+       .reservation .form{
+        height: 45%;
+        width: 100%;
+
+       }
+       
+ 
+    
+.home .homeSlider .slide2{
+    background: url(img/knifeV.jpg); 
+
+}
+
+.home .homeSlider .slide1,
+.home .homeSlider .slide2,
+.home .homeSlider .slide3 {
+
+    background-size: cover;
+    background-repeat:no-repeat ;
+} 
+}
+
+@media (max-width:808px)  {
+
+  /* media query for nav bar */
+
+  header .icons #menu{
+    display: inline-block;
+  }
+
+  header .navbar{
+    position: absolute;
+    top:100%;
+    left: 0;
+    text-align: center;
+    right: 0;
+    background:#5c5c5c;
+    border-top:0.1rem solid rgba( 205 , 170 , 124 , 0.2) ;
+    border-bottom:0.1rem solid rgba( 205 , 170 , 124 , 0.2) ;
+    padding: 1rem;
+    transition: all 0.6s ease;
+    clip-path: polygon(0  0 , 100% 0 , 100% 0 ,0 0 );
+  }
+
+  header .navbar.active{
+    clip-path: polygon(0  0 , 100% 0 ,  100% 100%, 0 100% );
+  }
+
+  header .navbar a{
+    display: block;
+    padding: 1.5rem;
+    margin: 1rem;
+     border: 1px solid #fff;
+    color: #fff;
+    font-size: 2rem;
+    background:transparent ;
+
+  }
+  /* media query for nav bar ends here */
+
+
+  /* media qurry for slides start*/
+ 
+
+.home .homeSlider .slide .content h3{
+    font-size: 2.5rem;
+    font-weight: 300;
+    opacity: 1;
+
+}
+.home .homeSlider .slide .content h1{
+    color: #fff;
+    font-size: 6rem;
+    opacity: 1;
+
+}
+
+.home .homeSlider .slide .content p{
+    font-size: 1.6rem;
+    opacity: 1;
+
+}
+
+.home .homeSlider .slide1{
+    background: url(img/piececakes.jpg);
+}
+.home .homeSlider .slide2{
+    background: url(img/knifeV.jpg); 
+
+}
+  
+.home .homeSlider .slide3{
+    background: url(img/33.jpg); 
+
+}
+
+.home .homeSlider .slide1,
+.home .homeSlider .slide2,
+.home .homeSlider .slide3 {
+
+    background-size: cover;
+    background-repeat:no-repeat ;
+} 
+
+/* media querry for welcome section */
+.welcome .boxContainer{
+    flex-direction: column;
+}
+.welcome .boxContainer .box{
+    width: 100%;
+}
+
+}
+
+@media (max-width:465px){
+    
+  /* media qurry for slides */
+    
+.home .homeSlider .slide .content{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+
+.home .homeSlider .slide .content h3{
+    font-size: 2.1rem;
+    font-weight: 300;
+}
+.home .homeSlider .slide .content h1{
+    color: #fff;
+    font-size: 5rem;
+}
+.home .homeSlider .slide .content p{
+    font-size: 1.4rem;
+  
+}
+
+}
