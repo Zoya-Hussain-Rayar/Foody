@@ -110,14 +110,14 @@ header .icons #menu{
 
 }
 .home .homeSlider .slide1{
-    background: url(img/piececake.jpg);
+    background: url(piececake.jpg);
 }
 .home .homeSlider .slide2{
-    background: url(img/knife2.jpg); 
+    background: url(knife2.jpg); 
 }
   
 .home .homeSlider .slide3{
-    background: url(img/food.jpg); 
+    background: url(food.jpg); 
 }
 
 
@@ -373,7 +373,7 @@ section{
 
 /* our menu section starts from here */
 .ourMenu{
-    background: url(img/bg-transformed.jpeg);
+    background: url(bg-transformed.jpeg);
     background-repeat:no-repeat ;
     background-size: cover;
     
@@ -564,7 +564,7 @@ section{
     object-fit: cover;
     top: 0;
     left: 0;
-    background: url(img/table.jpg);
+    background: url(table.jpg);
   background-position:center center ;
   background-size:cover;
   background-repeat: no-repeat;
@@ -603,14 +603,11 @@ section{
     font-weight: 300;
     outline: none;
     color:  black;
-
   }
   ::placeholder {
     color:  black;
-
   }
   .button {
-
     color: #050505;
     border-left: 5px solid #222121;
     border-right: 5px solid #222121;
@@ -620,13 +617,11 @@ section{
     font-size: 17px;
     letter-spacing: 0.2px;
     cursor: pointer;
-
   }
 
   .button:hover {
     padding: 7px 70px;
     font-weight: 400;
-
   }
 
 
@@ -793,7 +788,7 @@ section{
  
     
 .home .homeSlider .slide2{
-    background: url(img/knifeV.jpg); 
+    background: url(knifeV.jpg); 
 
 }
 
@@ -868,15 +863,15 @@ section{
 }
 
 .home .homeSlider .slide1{
-    background: url(img/piececakes.jpg);
+    background: url(piececakes.jpg);
 }
 .home .homeSlider .slide2{
-    background: url(img/knifeV.jpg); 
+    background: url(knifeV.jpg); 
 
 }
   
 .home .homeSlider .slide3{
-    background: url(img/33.jpg); 
+    background: url(33.jpg); 
 
 }
 
